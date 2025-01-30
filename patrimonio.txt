@@ -1,0 +1,36 @@
+ID: xxxxx
+Nº de Série: xxxxx
+Nome do Produto: xxxxx
+Tipo do Produto: 
+Descrição do Produto: xxxxx
+Localização do Produto: xxxxx
+Data de Fabricação do Produto: xx/xx/xx
+Data de Aquisição do Produto: xx/xx/xx
+----------------------------------------
+ID: xxxxx
+Nº de Série: xxxxx
+Nome do Produto: xxxxx
+Tipo do Produto: xxxxx
+Descrição do Produto: xxxxx
+Localização do Produto: xxxxx
+Data de Fabricação do Produto: xx/xx/xx
+Data de Aquisição do Produto: xx/xx/xx
+----------------------------------------
+ID: xxxx
+Nº de Série: xxx
+Nome do Produto: xxx
+Tipo do Produto: xxx
+Descrição do Produto: xxxx
+Localização do Produto: xxx
+Data de Fabricação do Produto: xx/xx/xx
+Data de Aquisição do Produto: xx/xx/xx
+----------------------------------------
+ID: sdfsd
+Nº de Série: 
+Nome do Produto: 
+Tipo do Produto: 
+Descrição do Produto: 
+Localização do Produto: 
+Data de Fabricação do Produto: 
+Data de Aquisição do Produto: 
+----------------------------------------
