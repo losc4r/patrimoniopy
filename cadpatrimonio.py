@@ -1,124 +1,152 @@
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout
-import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QMessageBox
+import sys 
 
-class CadastroCliente(QWidget):
+class Patrimonio(QWidget):
     def __init__(self):
         super().__init__()
 
-        # vamos configurar a geometria da tela, setando os valores de posição X e Y, além de largura e altura.
-        self.setGeometry(450,250,600,400)
+        # Vamos configurar a geometria da tela. Setandos valores de posição X e Y,
+        # além de largura e altura
+        self.setGeometry(500,30,400,600)
 
-        # texto para a barra de título
-        self.setWindowTitle("Cadastro de Patrimônio")
+        # Texto para a barra de título
+        self.setWindowTitle("Patrimônio do Objeto")
 
-        # gerenciador de layout vertical
+        #Gerenciador de layout vertical
         self.layout_v = QVBoxLayout()
 
-        # labels para os dados
-        self.label_id = QLabel("ID")
-        self.label_id.setStyleSheet("QLabel{font-size:16pt}")
-
-        self.label_serie = QLabel("Número de Série")
-        self.label_serie.setStyleSheet("QLabel{font-size:16pt}")
-
-        self.label_patrimonio = QLabel("Nome do Patrimônio")
-        self.label_patrimonio.setStyleSheet("QLabel{font-size:16pt}")
-
-        self.label_tipo = QLabel("Tipo")
-        self.label_tipo.setStyleSheet("QLabel{font-size:16pt}")
-
-        self.label_descricao = QLabel("Descrição")
-        self.label_descricao.setStyleSheet("QLabel{font-size:16pt}")
-
-        self.label_localizacao = QLabel("Localização")
-        self.label_localizacao.setStyleSheet("QLabel{font-size:16pt}")
-
-        self.label_dtfabricacao = QLabel("Data de Fabricação")
-        self.label_dtfabricacao.setStyleSheet("QLabel{font-size:16pt}")
-
-        self.label_dtaquisicao = QLabel("Data de Aquisição")
-        self.label_dtaquisicao.setStyleSheet("QLabel{font-size:16pt}")
-
-        # LineEdit para estilos
+        # Labels para o id do objeto
+        self.label_id = QLabel("ID do objeto:")
+        self.label_id.setStyleSheet("QLabel{font-size:15pt}")
+        #LineEdit para o id do objeto
         self.edit_id = QLineEdit()
-        self.edit_id.setStyleSheet("QLineEdit{font-size:16pt}")
+        self.edit_id.setStyleSheet("QLineEdit{font-size:15pt}")
+        #------------------------------------------------------
 
-        self.edit_serie = QLineEdit()
-        self.edit_serie.setStyleSheet("QLineEdit{font-size:16pt}")
+        # Labels para o número de série do objeto
+        self.label_numero = QLabel("Número de série:")
+        self.label_numero.setStyleSheet("QLabel{font-size:15pt}")
+        #LineEdit para o id do objeto
+        self.edit_numero = QLineEdit()
+        self.edit_numero.setStyleSheet("QLineEdit{font-size:15pt}")
+        #------------------------------------------------------
 
-        self.edit_patrimonio = QLineEdit()
-        self.edit_patrimonio.setStyleSheet("QLineEdit{font-size:16pt}")
+        # Labels para o nome do patrimônio
+        self.label_nome_patrimonio = QLabel("Nome do Patrimônio:")
+        self.label_nome_patrimonio.setStyleSheet("QLabel{font-size:15pt}")
+        #LineEdit para o nome do patrimônio
+        self.edit_nome_patrimonio = QLineEdit()
+        self.edit_nome_patrimonio.setStyleSheet("QLineEdit{font-size:15pt}")
+        #------------------------------------------------------
 
+        # Labels para o tipo do objeto
+        self.label_tipo = QLabel("Tipo do objeto:")
+        self.label_tipo.setStyleSheet("QLabel{font-size:15pt}")
+        #LineEdit para o tipo do objeto
         self.edit_tipo = QLineEdit()
-        self.edit_tipo.setStyleSheet("QLineEdit{font-size:16pt}")
+        self.edit_tipo.setStyleSheet("QLineEdit{font-size:15pt}")
+        #------------------------------------------------------
 
+        # Labels para a descrição do objeto
+        self.label_descricao = QLabel("Pequena descrição do objeto:")
+        self.label_descricao.setStyleSheet("QLabel{font-size:15pt}")
+        #LineEdit para o tipo do objeto
         self.edit_descricao = QLineEdit()
-        self.edit_descricao.setStyleSheet("QLineEdit{font-size:20pt}")
+        self.edit_descricao.setStyleSheet("QLineEdit{font-size:15pt}")
+        #------------------------------------------------------
 
-        self.edit_localizacao = QLineEdit()
-        self.edit_localizacao.setStyleSheet("QLineEdit{font-size:16pt}")
+        # Labels para a localização do objeto
+        self.label_local = QLabel("Sua localização:")
+        self.label_local.setStyleSheet("QLabel{font-size:15pt}")
+        #LineEdit para o tipo do objeto
+        self.edit_local = QLineEdit()
+        self.edit_local.setStyleSheet("QLineEdit{font-size:15pt}")
+        #------------------------------------------------------
 
-        self.edit_dtfabricacao = QLineEdit()
-        self.edit_dtfabricacao.setStyleSheet("QLineEdit{font-size:16pt}")
+        # Labels para a data de fabricação do objeto
+        self.label_fabricacao = QLabel("Data de fabricação:")
+        self.label_fabricacao.setStyleSheet("QLabel{font-size:15pt}")
+        #LineEdit para o tipo do objeto
+        self.edit_frabricacao = QLineEdit()
+        self.edit_frabricacao.setStyleSheet("QLineEdit{font-size:15pt}")
+        #------------------------------------------------------
 
-        self.edit_dtaquisicao = QLineEdit()
-        self.edit_dtaquisicao.setStyleSheet("QLineEdit{font-size:16pt}")
+        # Labels para a data de aquisição do objeto
+        self.label_aquisicao = QLabel("Data de aquisição:")
+        self.label_aquisicao.setStyleSheet("QLabel{font-size:15pt}")
+        #LineEdit para o tipo do objeto
+        self.edit_aquisicao = QLineEdit()
+        self.edit_aquisicao.setStyleSheet("QLineEdit{font-size:15pt}")
+        #------------------------------------------------------
 
-        # estilo botão
-        self.button = QPushButton("Atualizar Patrimônio")
-        self.button.setStyleSheet("QPushButton{background-color:blue;color:white;font-size:16pt;font-weight:bold}")
-
-        # chamar a função de cadastro ao clicar
+        self.button = QPushButton("Cadastrar")
+        self.button.setStyleSheet("QPushButton{background-color:blue;color:white;font-size:20pt;font-weight:bold}")
+        # Chamar a função de cadastro do cliente ao clicar no botão
         self.button.clicked.connect(self.cadastrar)
+        #------------------------------------------------------
 
-        # adicionar a label nome e o lineedit ao layout vertical
+        # Adicionar a Label id e o lineedit ao layout certical
         self.layout_v.addWidget(self.label_id)
         self.layout_v.addWidget(self.edit_id)
 
-        self.layout_v.addWidget(self.label_serie)
-        self.layout_v.addWidget(self.edit_serie)
+        # Adicionar a Label números de série e o lineedit ao layout certical
+        self.layout_v.addWidget(self.label_numero)
+        self.layout_v.addWidget(self.edit_numero)
 
-        self.layout_v.addWidget(self.label_patrimonio)
-        self.layout_v.addWidget(self.edit_patrimonio)
+        # Acionar a Label nome do patrimônio e o lineedit ao layout certical
+        self.layout_v.addWidget(self.label_nome_patrimonio)
+        self.layout_v.addWidget(self.edit_nome_patrimonio)
 
+        # Acionar a Label tipo e o lineedit ao layout certical
         self.layout_v.addWidget(self.label_tipo)
         self.layout_v.addWidget(self.edit_tipo)
 
+         # Acionar a Label descrição e o lineedit ao layout certical
         self.layout_v.addWidget(self.label_descricao)
         self.layout_v.addWidget(self.edit_descricao)
 
-        self.layout_v.addWidget(self.label_localizacao)
-        self.layout_v.addWidget(self.edit_localizacao)
+         # Acionar a Label localização e o lineedit ao layout certical
+        self.layout_v.addWidget(self.label_local)
+        self.layout_v.addWidget(self.edit_local)
 
-        self.layout_v.addWidget(self.label_dtfabricacao)
-        self.layout_v.addWidget(self.edit_dtfabricacao)
+        # Acionar a Label data de fabricação e o lineedit ao layout certical
+        self.layout_v.addWidget(self.label_fabricacao)
+        self.layout_v.addWidget(self.edit_frabricacao)
 
-        self.layout_v.addWidget(self.label_dtaquisicao)
-        self.layout_v.addWidget(self.edit_dtaquisicao)
+        # Acionar a Label data de aquisição e o lineedit ao layout certical
+        self.layout_v.addWidget(self.label_aquisicao)
+        self.layout_v.addWidget(self.edit_aquisicao)
 
         self.layout_v.addWidget(self.button)
 
-        # adicionar o layout_v na tela
+        
+        
+        #adicionar o layout_v a tela
         self.setLayout(self.layout_v)
 
     def cadastrar(self):
-        # Variável de referência ao arquivo de texto
-        arquivo = open("patrimonio.txt","+a")
-        arquivo.write(f"ID: {self.edit_id.text()}\n")
-        arquivo.write(f"Nº de Série: {self.edit_serie.text()}\n")
-        arquivo.write(f"Nome do Produto: {self.edit_patrimonio.text()}\n")
-        arquivo.write(f"Tipo do Produto: {self.edit_tipo.text()}\n")
-        arquivo.write(f"Descrição do Produto: {self.edit_descricao.text()}\n")
-        arquivo.write(f"Localização do Produto: {self.edit_localizacao.text()}\n")
-        arquivo.write(f"Data de Fabricação do Produto: {self.edit_dtfabricacao.text()}\n")
-        arquivo.write(f"Data de Aquisição do Produto: {self.edit_dtaquisicao.text()}\n")
-        arquivo.write("----------------------------------------\n")
-        arquivo.close()
+        if(self.edit_id.text()=="" or self.edit_numero.text()=="" or self.edit_nome_patrimonio.text()=="" or self.edit_tipo.text()=="" or self.edit_descricao.text()=="" or self.edit_frabricacao.text()=="" or self.edit_aquisicao.text()==""):
+            QMessageBox.critical(self, "Erro", "Você deve preencher todos os campos")
+        else:
+            # Vamos criar uma variável que fara referencia ao um arquivo de texto
+            arquivo = open("Patrimônio.txt","+a", encoding="utf8")
+            arquivo.write(f"ID: {self.edit_id.text()}\n")
+            arquivo.write(f"Número de série: {self.edit_numero.text()}\n")
+            arquivo.write(f"Nome do patrimônio: {self.edit_nome_patrimonio.text()}\n")
+            arquivo.write(f"Tipo: {self.edit_tipo.text()}\n")
+            arquivo.write(f"Descrição: {self.edit_descricao.text()}\n")
+            arquivo.write(f"Localização: {self.edit_local.text()}\n")
+            arquivo.write(f"Data de fabricação: {self.edit_frabricacao.text()}\n")
+            arquivo.write(f"Data de aquisição: {self.edit_aquisicao.text()}\n")
+            arquivo.write("-------------------------------------------\n")
+            arquivo.close()
+            QMessageBox.information(self, "Salvo", "Os dados do patrimônio foram salvos")
 
-app = QApplication(sys.argv)
-# Instância da classe CadastroCliente
-tela = CadastroCliente()
+
+#app = QApplication(sys.argv)
+# Instancia da classe CadastroCliente para iniciar a janela
+#tela = Patrimonio()
 # exibir a tela durante a execução
-tela.show ()
+#tela.show()
 # ao clicar no botão fechar a tela deve fechar e sair da memória
-app.exec_()
+#app.exec()
